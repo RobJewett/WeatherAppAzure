@@ -27,9 +27,9 @@ namespace WeatherWebinar
 
 			Name = new Label();
 			Email = new Label();
-			DefaultLocation = new Entry();
+			DefaultLocation = new Entry { AutomationId = "DefaultLocationField"};
 
-			Button ChangeDefaultLocationButton = new Button { Text = "Change Location"};
+			Button ChangeDefaultLocationButton = new Button { Text = "Change Location", AutomationId = "ChangeLocation"};
 			ChangeDefaultLocationButton.Clicked += async (sender, e) =>
 			{
 				var yesNo = await DisplayAlert("Update Location","Are you sure you want to change your location?","Yes","No");
