@@ -152,11 +152,11 @@ namespace WeatherWebinar.Model
 		public string Rain { get; set; } = string.Empty;
 
 		[JsonIgnore]
-		public string DisplayDate = "";// => DateTime.Parse(Date).ToLocalTime().ToString("g");
+		public string DisplayDate => "";//DateTime.Parse(Date).ToLocalTime().ToString("g") ?? string.Empty;
 		[JsonIgnore]
 		public string DisplayTemp => $"Temp: {Temperature?.day_temp ?? 0}° {Weather?[0]?.Main ?? string.Empty}";
 		[JsonIgnore]
-		public string DisplayIcon => "";//$"http://openweathermap.org/img/w/{Weather?[0]?.Icon}.png";
+		public string DisplayIcon => $"http://openweathermap.org/img/w/{Weather?[0]?.Icon}.png";
 
 	}
 

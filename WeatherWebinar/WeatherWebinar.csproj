@@ -28,9 +28,6 @@
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="WeatherWebinarPage.xaml" />
-    <EmbeddedResource Include="View\ForecastView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\WeatherView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -49,8 +46,7 @@
     <Compile Include="Helpers\HockeyAppHelpers.cs" />
     <Compile Include="Services\IHockeyAppFeedbackService.cs" />
     <Compile Include="Services\AzureService.cs" />
-    <Compile Include="View\ForecastView.xaml.cs">
-      <DependentUpon>ForecastView.xaml</DependentUpon>
+    <Compile Include="View\ForecastView.cs">
     </Compile>
     <Compile Include="View\WeatherView.xaml.cs">
       <DependentUpon>WeatherView.xaml</DependentUpon>
@@ -58,6 +54,7 @@
     <Compile Include="View\AccountView.cs" />
     <Compile Include="Services\ILoginAndSetupService.cs" />
     <Compile Include="View\LoginPage.cs" />
+    <Compile Include="View\ForecastDataTemplate.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.WindowsAzure.Mobile">

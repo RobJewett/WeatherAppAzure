@@ -59,6 +59,7 @@ namespace WeatherWebinar
 					if (user.Count != 0)
 					{
 						await DisplayAlert("Welcome!", $"Welcome Back {user[0].firstName}!", "Ok");
+						Settings.Current.City = user[0].defaultLocation;
 						await Navigation.PopAsync();
 					}
 					else {

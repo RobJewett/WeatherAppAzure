@@ -7,7 +7,10 @@ using Microsoft.WindowsAzure.MobileServices;
 using WeatherWebinar.Helpers;
 using WeatherWebinar.Services;
 using System;
+using System.Diagnostics;
+using Xamarin.Forms.Xaml;
 
+[assembly:XamlCompilation(XamlCompilationOptions.Compile)]
 namespace WeatherWebinar
 {
 	public class App : Application

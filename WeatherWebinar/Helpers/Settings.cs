@@ -141,13 +141,14 @@ namespace WeatherWebinar.Helpers
 		}
 
 		private const string CityKey = nameof(CityKey);
-		private static readonly string CityDefault = "San Francisco,CA";
+		private static readonly string CityDefault = "San Francisco, CA";
 
 		public string City
 		{
 			get
 			{
-				return AppSettings.GetValueOrDefault(CityKey, CityDefault);
+				var j =  AppSettings.GetValueOrDefault(CityKey, CityDefault);
+				return j;
 			}
 			set
 			{

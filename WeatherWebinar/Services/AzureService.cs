@@ -105,23 +105,26 @@ namespace WeatherWebinar.Services
 
 		public async Task<WeatherForecastRoot> GetForecast(int id, Units units = Units.Imperial)
 		{
-			try
+			return await Task.Run(async () =>
 			{
-				var arguments = new Dictionary<string, string>
+				try
+				{
+					var arguments = new Dictionary<string, string>
 				{
 					{("id"),($"{id}")},
 					{("numDays"),("10")}
 				};
 
-				var res = await MobileService.InvokeApiAsync<WeatherForecastRoot>("getWeather/forecast", HttpMethod.Get, arguments);
+					var res = await MobileService.InvokeApiAsync<WeatherForecastRoot>("getWeather/forecast", HttpMethod.Get, arguments);
 
-				return res;
-			}
-			catch (Exception e)
-			{
-				HockeyappHelpers.Report(e);
-				return null;
-			}
+					return res;
+				}
+				catch (Exception e)
+				{
+					HockeyappHelpers.Report(e);
+					return null;
+				}
+			});
 		}
 
 		#endregion

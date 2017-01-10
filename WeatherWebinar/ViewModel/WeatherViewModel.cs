@@ -192,7 +192,7 @@ namespace WeatherWebinar
 
 
 				//Get forecast based on cityId
-				//Forecast = await AzureService.Instance.GetForecast(weatherRoot.CityId, units);
+				Forecast = await AzureService.Instance.GetForecast(weatherRoot.CityId, units);
 
 				var unit = IsImperial ? "F" : "C";
 				Temp = $"Temp: {weatherRoot?.MainWeather?.Temperature ?? 0}°{unit}";

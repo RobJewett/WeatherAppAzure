@@ -7,12 +7,21 @@ namespace WeatherWebinar
 {
 	public partial class ForecastView : ContentPage
 	{
+		ListView _listViewWeather;
+
 		public ForecastView()
 		{
-			InitializeComponent();
 			if (Device.OS == TargetPlatform.iOS)
 				Icon = new FileImageSource { File = "tab2.png" };
-			ListViewWeather.ItemTapped += (sender, args) => ListViewWeather.SelectedItem = null;
+
+			Title = "Forecast";
+			_listViewWeather = new ListView
+			{ 
+				ItemTemplate = new DataTemplate(typeof(ForecastDataTemplate)),
+				SeparatorColor = Color.Transparent
+			};
+			_listViewWeather.SetBinding<WeatherViewModel>(ListView.ItemsSourceProperty, vm => vm.Forecast.Items);
+			_listViewWeather.ItemTapped += (sender, args) => _listViewWeather.SelectedItem = null;
 
 #if DEBUG
 			var crashButtonToolBarItem = new ToolbarItem
@@ -23,6 +32,7 @@ namespace WeatherWebinar
 			crashButtonToolBarItem.SetBinding(ToolbarItem.CommandProperty, "CrashButtonTapped");
 			ToolbarItems.Add(crashButtonToolBarItem);
 #endif
+			Content = _listViewWeather;
 		}
 
 		protected override void OnAppearing()
