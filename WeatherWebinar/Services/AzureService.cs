@@ -183,7 +183,6 @@ namespace WeatherWebinar.Services
 		}
 
 
-
 		public async Task<List<User>> GetUser()
 		{
 			await UserTable.PurgeAsync();

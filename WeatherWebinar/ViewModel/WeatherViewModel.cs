@@ -120,6 +120,40 @@ namespace WeatherWebinar
 		}));
 
 
+		ICommand changeDefaultLocation;
+		public ICommand ChangeDefaultLocation =>
+			changeDefaultLocation ??
+		(changeDefaultLocation = new Command(async() =>
+		{
+			//await ExecuteChangeLocationCommand();
+		}));
+
+		//private async Task ExecuteChangeLocationCommand()
+		//{
+		//	var yesNo = await DisplayAlert("Update Location", "Are you sure you want to change your location?", "Yes", "No");
+
+		//	if (yesNo)
+		//	{
+		//		if (DefaultLocation.Text != _currentuser.defaultLocation)
+		//		{
+		//			_currentuser.defaultLocation = DefaultLocation.Text;
+
+		//			var success = await AzureService.Instance.SaveUserAsync(_currentuser);
+		//			if (!success)
+		//			{
+		//				await DisplayAlert("Error!", "Error changing your location", "OK");
+		//			}
+		//			else {
+		//				await DisplayAlert("Success!", $"You have changed your default location to {DefaultLocation.Text}", "OK");
+		//				Settings.Current.City = DefaultLocation.Text;
+		//			}
+		//		}
+		//		else {
+		//			await DisplayAlert("Same Location", "You didn't change the location!", "OK");
+		//		}
+		//	}
+		//}
+
 		private void ExecuteCrashButtonCommand()
 		{
 			HockeyappHelpers.TrackEvent("Crash Button Tapped");

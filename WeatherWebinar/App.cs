@@ -35,7 +35,7 @@ namespace WeatherWebinar
 
 			if (Settings.Current.CurrentMobileServiceUser != null)
 			{
-				AzureService.Instance.Initialize();
+				AzureService.Instance.Initialize().ConfigureAwait(true);
 			}
 			else {
 				MainPage.Navigation.PushAsync(new LoginPage());

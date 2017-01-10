@@ -12,6 +12,7 @@ using HockeyApp.Android.Metrics;
 using Plugin.Permissions;
 using Xamarin.Forms.Platform.Android;
 
+[assembly: MetaData("net.hockeyapp.android.appIdentifier", Value = "aa8b2cffe4674bea832a7d5ff89e111e")]
 namespace WeatherWebinar.Droid
 {
 	[Activity(Label = "WeatherWebinar.Droid", Icon = "@drawable/icon", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -41,13 +42,13 @@ namespace WeatherWebinar.Droid
 		protected override void OnResume()
 		{
 			base.OnResume();
-			Tracking.StartUsage(this);
+			//Tracking.StartUsage(this);
 		}
 
 		protected override void OnPause()
 		{
 			base.OnPause();
-			Tracking.StopUsage(this);
+			//Tracking.StopUsage(this);
 		}
 
 		void InitializeHockeyApp(string hockeyAppID)

@@ -28,7 +28,7 @@ namespace WeatherWebinar
 
 			CityEntry = new Entry { Placeholder = "Enter Your Default City", IsVisible = false };
 
-			var img = ImageSource.FromFile("weather-sun-icon.png");
+			var img = ImageSource.FromFile("weathersunicon.png");
 
 			var image = new Image();
 			image.Source = img;
@@ -54,9 +54,18 @@ namespace WeatherWebinar
 
 					//Settings.Current.CurrentMobileServiceUser = tempuser;
 					//App.LoggedIn = true;
-					NextButton.IsVisible = true;
-					CityEntry.IsVisible = true;
-					GetStartedButton.IsVisible = false;
+					await AzureService.Instance.Initialize();
+					var user = await AzureService.Instance.GetCurrentUser();
+					if (user.Count != 0)
+					{
+						await DisplayAlert("Welcome!", $"Welcome Back {user[0].firstName}!", "Ok");
+						await Navigation.PopAsync();
+					}
+					else {
+						NextButton.IsVisible = true;
+						CityEntry.IsVisible = true;
+						GetStartedButton.IsVisible = false;
+					}
 				}
 			};
 
