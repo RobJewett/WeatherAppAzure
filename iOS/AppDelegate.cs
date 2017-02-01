@@ -7,6 +7,7 @@ using UIKit;
 using Microsoft.WindowsAzure.MobileServices;
 using System.Threading.Tasks;
 using WeatherWebinar.Services;
+using HockeyApp.iOS;
 
 namespace WeatherWebinar.iOS
 {
@@ -76,12 +77,12 @@ namespace WeatherWebinar.iOS
 
 		void InitializeHockeyApp(string iOSHockeyAppID)
 		{
-			//var manager = BITHockeyManager.SharedHockeyManager;
-			//manager.Configure(iOSHockeyAppID);
-			//manager.LogLevel = BITLogLevel.Debug;
-			//manager.StartManager();
-			//manager.Authenticator.AuthenticateInstallation();
-			//manager.UpdateManager.CheckForUpdate();
+			var manager = BITHockeyManager.SharedHockeyManager;
+			manager.Configure(iOSHockeyAppID);
+			manager.LogLevel = BITLogLevel.Debug;
+			manager.StartManager();
+			manager.Authenticator.AuthenticateInstallation();
+			manager.UpdateManager.CheckForUpdate();
 		}
 
 	}

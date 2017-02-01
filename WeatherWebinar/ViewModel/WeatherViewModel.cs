@@ -225,7 +225,7 @@ namespace WeatherWebinar
 
 					var locationCityName = UseGPS
 						? Condition?.Substring(0, Condition.IndexOf(":", StringComparison.Ordinal))
-						: Location?.Substring(0, Location.IndexOf(",", StringComparison.Ordinal));
+									: Location;
 
 					eventDictionaryHockeyApp.Add("Location", locationCityName);
 				}

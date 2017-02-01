@@ -51,13 +51,12 @@ namespace WeatherWebinar.Services
 			//setup our local sqlite store and intialize our table
 			var store = new MobileServiceSQLiteStore(path);
 			store.DefineTable<User>();
-			//store.DefineTable<ToDoItem>();
+
 			await MobileService.SyncContext.InitializeAsync(store, new MobileServiceSyncHandler());
 
 			//Get our sync table that will call out to azure
 			UserTable = MobileService.GetSyncTable<User>();
 			await SyncUserAsync();
-			//ToDoItemTable = MobileService.GetSyncTable<ToDoItem>();
 		}
 
 		#region WEATHER 
@@ -112,7 +111,7 @@ namespace WeatherWebinar.Services
 					var arguments = new Dictionary<string, string>
 				{
 					{("id"),($"{id}")},
-					{("numDays"),("10")}
+					{("numDays"),("16")}
 				};
 
 					var res = await MobileService.InvokeApiAsync<WeatherForecastRoot>("getWeather/forecast", HttpMethod.Get, arguments);

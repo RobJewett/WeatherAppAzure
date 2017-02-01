@@ -11,6 +11,7 @@ using HockeyApp.Android;
 using HockeyApp.Android.Metrics;
 using Plugin.Permissions;
 using Xamarin.Forms.Platform.Android;
+using System.Reflection.Emit;
 
 [assembly: MetaData("net.hockeyapp.android.appIdentifier", Value = "aa8b2cffe4674bea832a7d5ff89e111e")]
 namespace WeatherWebinar.Droid

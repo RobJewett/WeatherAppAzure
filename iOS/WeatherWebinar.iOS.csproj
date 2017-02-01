@@ -200,6 +200,7 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="LoginAndSetupiOS.cs" />
+    <Compile Include="FeedbackiOS.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Add%402x.png" />

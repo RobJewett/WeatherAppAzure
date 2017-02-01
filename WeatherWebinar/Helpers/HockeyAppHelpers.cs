@@ -13,12 +13,12 @@ namespace WeatherWebinar.Helpers
 
 		public static void TrackEvent(string eventName)
 		{
-			//HockeyApp.MetricsManager.TrackEvent(eventName);
+			HockeyApp.MetricsManager.TrackEvent(eventName);
 		}
 
 		public static void TrackEvent(string eventName, Dictionary<string, string> properties, Dictionary<string, double> measurements)
 		{
-			//HockeyApp.MetricsManager.TrackEvent(eventName, properties, measurements);
+			HockeyApp.MetricsManager.TrackEvent(eventName, properties, measurements);
 		}
 
 		#region REPORT
