@@ -31,7 +31,7 @@ namespace WeatherWebinar.iOS
 			Forms.Init();
 
 #if DEBUG
-			//Xamarin.Calabash.Start();
+			Xamarin.Calabash.Start();
 #endif
 
 			InitializeHockeyApp(HockeyAppId_iOS);

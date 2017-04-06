@@ -14,7 +14,10 @@ namespace WeatherWebinar.Helpers
 		public static void TrackEvent(string eventName)
 		{
 			HockeyApp.MetricsManager.TrackEvent(eventName);
+			 
 		}
+
+
 
 		public static void TrackEvent(string eventName, Dictionary<string, string> properties, Dictionary<string, double> measurements)
 		{

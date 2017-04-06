@@ -26,7 +26,7 @@ namespace WeatherWebinar
 				{
 					new WeatherView(),
 					new ForecastView(),
-					new AccountView()
+					//new AccountView()
 				}
 			};
 
@@ -36,13 +36,13 @@ namespace WeatherWebinar
 				BarTextColor = Color.White
 			};
 
-			if (Settings.Current.CurrentMobileServiceUser != null)
-			{
-				AzureService.Instance.Initialize().ConfigureAwait(true);
-			}
-			else {
-				MainPage.Navigation.PushAsync(new LoginPage());
-			}
+			//if (Settings.Current.CurrentMobileServiceUser != null)
+			//{
+			//	AzureService.Instance.Initialize().ConfigureAwait(true);
+			//}
+			//else {
+			//	MainPage.Navigation.PushAsync(new LoginPage());
+			//}
 
 
 		}

@@ -7,7 +7,7 @@ using System;
 using Newtonsoft.Json;
 
 namespace weatherwebinarService.Controllers
-{   [Authorize]
+{   //[Authorize]
     [MobileAppController]
     public class WeatherController : ApiController
     {
