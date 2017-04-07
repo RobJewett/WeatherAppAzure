@@ -31,7 +31,6 @@ namespace WeatherWebinar.Droid
 			global::Xamarin.Forms.Forms.Init(this, bundle);
 			InitializeHockeyApp(HockeyAppId_Droid);
 
-
 			LoadApplication(new App());
 		}
 
