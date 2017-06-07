@@ -3,7 +3,7 @@
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 		x:Class="WeatherWebinar.WeatherView"
 		Title="Weather"
-		BackgroundColor="Red">
+    BackgroundColor="Green">
 	 <StackLayout Padding="10" Spacing="10">
         <Entry x:Name="LocationEntry" Text="{Binding Location}">
             <Entry.Triggers>
